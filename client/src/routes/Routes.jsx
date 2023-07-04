@@ -1,17 +1,17 @@
-import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import NavBar from "../components/NavBar";
 import { Home, About, Projects } from "../pages/index";
 
 function Routes() {
   return (
     <>
-      <NavBar />
-      <Footer />
-      <Home />
+      <NavBar/>
+      <Home/>
+      <Projects/>
       <About />
-      <Projects />
+      <Footer />
     </>
-  );
+  )
 }
 
-export default Routes;
+export default Routes
