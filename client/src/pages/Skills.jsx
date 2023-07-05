@@ -1,6 +1,6 @@
 
 
-const About = () => {
+const Skils = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const About = () => {
   )
 }
 
-export default About
+export default Skils

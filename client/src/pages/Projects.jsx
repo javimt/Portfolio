@@ -1,6 +1,6 @@
 
 
-function Projects() {
+const Projects = () => {
   return (
     <div>
       

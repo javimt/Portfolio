@@ -1,13 +1,15 @@
-import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
-import { Home, About, Projects } from "../pages/index";
+import Footer from "../components/Footer";
+import { Home, Projects, Skils, About } from "../pages/index";
 
-function Routes() {
+
+const Routes = () => {
   return (
     <>
-      <NavBar/>
-      <Home/>
-      <Projects/>
+      <NavBar />
+      <Home />
+      <Projects />
+      <Skils />
       <About />
       <Footer />
     </>

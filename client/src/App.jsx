@@ -1,12 +1,12 @@
-import Routes from "./routes/Routes"
+import Routes from "./routes/Routes";
 
 function App() {
 
   return (
-    <>
-      <Routes/>
-    </>
+    <div>
+      <Routes />
+    </div>
   )
 }
 
-export default App
+export default App;

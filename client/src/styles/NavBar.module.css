@@ -1,0 +1,23 @@
+.navbar {
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.links a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: #333;
+  font-family: "Nombre de la fuente", sans-serif;
+  font-size: 16px;
+}
+
+.links a.link {
+  color: #555;
+}
