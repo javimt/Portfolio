@@ -28,6 +28,9 @@ const NavBar = () => {
         <Link to="/home" className={styles.link}>
           Home
         </Link>
+        <Link to="/skills" className={styles.link}>
+          Skills
+        </Link>
       </div>
       <div className={styles.menuIcon} onClick={handleMenuClick}>
         {showMenu ? <GiCrossedBones color="#E6B17E" /> : <GiHamburgerMenu color="#E6B17E" />}

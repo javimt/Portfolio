@@ -8,7 +8,7 @@ html, body, #root {
 }
 
 :root {
-  font-family: italic oblique;
+  font-family: Georgia, serif;
   line-height: 1.5;
   font-weight: 400;
 
