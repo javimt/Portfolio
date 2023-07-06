@@ -1,15 +1,15 @@
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import { Home, Projects, Skils, About } from "../pages/index";
+import { Home, Projects, Skills, About } from "../pages/index";
 
 
 const Routes = () => {
   return (
     <>
       <NavBar />
+      <Skills />
       <Home />
       <Projects />
-      <Skils />
       <About />
       <Footer />
     </>
