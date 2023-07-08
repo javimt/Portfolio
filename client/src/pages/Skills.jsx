@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import { Environment, OrbitControls, Stars, Html } from "@react-three/drei";
+import { OrbitControls, Stars, Html } from "@react-three/drei";
 import {
   FaHtml5,
   FaCss3Alt,
