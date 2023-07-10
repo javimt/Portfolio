@@ -18,7 +18,8 @@
     align-items: center;
   }
   .links :hover {
-    color: #C56E33
+    color: #C56E33;
+    cursor: pointer
   }
   .links a {
     display: flex;

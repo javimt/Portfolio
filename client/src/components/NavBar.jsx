@@ -1,5 +1,5 @@
 import styles from "../styles/NavBar.module.css";
-import { Link } from "react-router-dom";
+import { Link, animateScroll as scroll } from "react-scroll";
 import { useState } from "react"
 import { GiHamburgerMenu, GiCrossedBones } from 'react-icons/gi';
 import image from "../assets/mi logo1.png"

@@ -1,10 +1,10 @@
-import Routes from "./routes/Routes";
+import RoutesApp from "./routes/RoutesApp";
 
 function App() {
 
   return (
     <div>
-      <Routes />
+      <RoutesApp />
     </div>
   )
 }
