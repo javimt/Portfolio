@@ -1,4 +1,4 @@
-@media (max-width: 2000px) {
+
   .skills {
     width: 100vw;
     height: 100vh;
@@ -21,18 +21,21 @@
     width: 10%;
     height: 10%;
   }
-}
 
+/* 
 @media (max-width: 1000px) and (min-width: 250px) {
   .skills {
     width: 100vw;
     height: 100vh;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    overflow-x: hidden;
   }
-  .mesh {
-    margin-bottom: 10px;
+  .skill {
+    width: 10%;
+    height: 10%;
+    margin: 10px;
   }
-}
+} */
