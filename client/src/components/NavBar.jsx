@@ -2,7 +2,7 @@ import styles from "../styles/NavBar.module.css";
 import { Link, animateScroll as scroll } from "react-scroll";
 import { useState } from "react"
 import { GiHamburgerMenu, GiCrossedBones } from 'react-icons/gi';
-import image from "../assets/mi logo1.png"
+import image from "../assets/mi logo3.png"
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);

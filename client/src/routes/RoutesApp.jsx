@@ -6,8 +6,8 @@ const Routes = () => {
   return (
     <>
       <NavBar />
-      <Skills />
       <Home />
+      <Skills />
       <Projects />
       <About />
       <Footer />
