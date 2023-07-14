@@ -22,7 +22,7 @@ const Sphere = ({ position, size, children }) => {
   return (
     <mesh ref={meshRef} position={position} className={styles.mesh}>
       <sphereGeometry args={[size, 20, 20]} />
-      <meshStandardMaterial color="#C56E33" wireframe />
+      <meshBasicMaterial color="#C56E33" wireframe />
       <Html center>{children}</Html>
     </mesh>
   );
@@ -92,7 +92,7 @@ const Skills = () => {
 
   const adjustedSpheres = spheres.map((sphere, index) => {
     const adjustedPosition = [...sphere.position];
-    const adjustedSize = windowSize <= 1000 ? 1 : 1.5;
+    const adjustedSize = windowSize <= 1000 ? 0.1 : 1.5;
     if (windowSize <= 1000) {
       const spacing  = windowSize / spheres.length;
       adjustedPosition[1] = index * spacing  - windowSize / 2 + spacing  / 2;

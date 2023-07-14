@@ -1,0 +1,33 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  overflow-x: hidden;
+  flex-wrap: wrap;
+}
+.icons {
+  display: flex;
+  margin-left: 20px;
+  align-items: center;
+  width: 30px;
+}
+.a {
+  cursor: pointer;
+  margin-right: 20px;
+}
+.a :hover {
+  color: #e6b17e;
+}
+.by {
+  font-family: Georgia, serif;
+  display: flex;
+  color: #e6b17e;
+  margin-right: 20px;
+}
+.p {
+  font-family: Georgia, serif;
+  color: #e6b17e;
+  margin-left: 10px;
+}
