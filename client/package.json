@@ -20,9 +20,11 @@
     "react-icons": "^4.10.1",
     "react-router-dom": "^6.14.1",
     "react-scroll": "^1.8.9",
+    "react-slick": "^0.29.0",
     "react-tilt": "^1.0.2",
     "react-vertical-timeline-component": "^3.6.0",
-    "three": "r163"
+    "three": "r163",
+    "three-bmfont-text": "^3.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.14",

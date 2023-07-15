@@ -1,15 +1,23 @@
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import { Home, Projects, Skills, About } from "../pages/index";
+import { Home, Projects, Skills3d, About, Skills } from "../pages/index";
 
 const Routes = () => {
   return (
     <>
       <NavBar />
-      <Home />
-      <Skills />
-      <Projects />
-      <About />
+      <div id="/">
+        <Home />
+      </div>
+      <div id="skills3d">
+        <Skills3d />
+      </div>
+      <div id="projects">
+        <Projects />
+      </div>
+      <div id="about">
+        <About />
+      </div>
       <Footer />
     </>
   )

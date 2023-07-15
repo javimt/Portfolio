@@ -1,0 +1,34 @@
+.skills {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+.canvas {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.skill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mesh {
+  width: 10%;
+  height: 10%;
+}
+
+@media (max-width: 1000px) and (min-width: 250px) {
+  .skills {
+    overflow-x: hidden;
+  }
+  .canvas {
+    width: 50px; 
+    height: 50px; 
+  }
+}
+
