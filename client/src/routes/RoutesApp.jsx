@@ -1,6 +1,6 @@
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import { Home, Projects, Skills3d, About, Skills } from "../pages/index";
+import { Home, Projects, Skills3d, About } from "../pages/index";
 
 const Routes = () => {
   return (

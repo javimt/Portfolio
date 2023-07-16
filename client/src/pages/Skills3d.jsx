@@ -1,6 +1,6 @@
-import { useRef, useState, useEffect } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Html } from "@react-three/drei";
+import { useRef, useState, useEffect, useMemo } from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -14,129 +14,114 @@ import { SiRedux } from "react-icons/si";
 import { BsGit } from "react-icons/bs";
 import { BiLogoPostgresql } from "react-icons/bi";
 import styles from "../styles/Skills3d.module.css";
-
-const Sphere = ({ position, size, children }) => {
-  const meshRef = useRef();
-  useFrame(() => (meshRef.current.rotation.y += 0.01));
-
-  return (
-    <mesh ref={meshRef} position={position}>
-      <sphereGeometry args={[size, 20, 20]} />
-      <meshBasicMaterial color="#C56E33" wireframe />
-      <Html center style={{ width: '110px', height: '110px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        {children}
-      </Html>
-    </mesh>
-  );
-};
+import Spheres from "../components/Spheres";
 
 const Skills3d = () => {
+
   const [windowSize, setWindowSize] = useState(window.innerWidth);
-  const [cameraPosition, setCameraPosition] = useState([0, 0, 200]);
-  const [spheresSize, setSpheresSize] = useState([]);
+  const cameraRef = useRef();
 
-  useEffect(() => { 
-    const handleResize = () => { 
-      const aspect = window.innerWidth / window.innerHeight; 
-      const zoom = window.innerWidth < 1000 ? 100 : 50; 
-      cameraRef.current.aspect = aspect; 
-      cameraRef.current.zoom = zoom; 
-      cameraRef.current.updateProjectionMatrix(); 
-    }; 
- 
-    window.addEventListener("resize", handleResize); 
-    return () => window.removeEventListener("resize", handleResize); 
-  }, []); 
+  useEffect(() => {
+    
+    const handleResize = () => {
+      if (cameraRef.current) {
+      const aspect = window.innerWidth / window.innerHeight;
+      const zoom = window.innerWidth < 1000 ? 100 : 50;
+      cameraRef.current.aspect = aspect;
+      cameraRef.current.zoom = zoom;
+      cameraRef.current.updateProjectionMatrix();
+      setWindowSize(window.innerWidth);
+      }
+    };
 
-  const spheres = [
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const iconSize = windowSize * 0.1;
+
+  const spheres = useMemo(() => [
     {
-      id:"1",
-      icon: <FaNodeJs size="100%" color="#e6b17e" />,
+      id: "1",
+      icon: <FaNodeJs size={iconSize} color="#e6b17e" />,
       position: [0, 0, 0],
     },
     {
       id: "2",
-      icon: <BiLogoPostgresql size="100%" color="#e6b17e" />,
+      icon: <BiLogoPostgresql size={iconSize} color="#e6b17e" />,
       position: [7, 0, 0],
     },
     {
       id: "3",
-      icon: <TbBrandJavascript size="100%" color="#e6b17e" />,
+      icon: <TbBrandJavascript size={iconSize} color="#e6b17e" />,
       position: [-7, 0, 0],
     },
     {
       id: "4",
-      icon: <FaReact size="100%" color="#e6b17e" />,
+      icon: <FaReact size={iconSize} color="#e6b17e" />,
       position: [3.5, 0, 0],
     },
     {
       id: "5",
-      icon: <FaCss3Alt size="100%" color="#e6b17e" />,
+      icon: <FaCss3Alt size={iconSize} color="#e6b17e" />,
       position: [-3.5, 0, 0],
     },
     {
       id: "6",
-      icon: <FaDatabase size="100%" color="#e6b17e" />,
+      icon: <FaDatabase size={iconSize} color="#e6b17e" />,
       position: [-7, 3.5, 0],
     },
     {
       id: "7",
-      icon: <FaHtml5 size="100%" color="#e6b17e" />,
+      icon: <FaHtml5 size={iconSize} color="#e6b17e" />,
       position: [3.5, 3.5, 0],
     },
     {
       id: "8",
-      icon: <SiRedux size="100%" color="#e6b17e" />,
+      icon: <SiRedux size={iconSize} color="#e6b17e" />,
       position: [0, 3.5, 0],
     },
     {
       id: "9",
-      icon: <BsGit size="100%" color="#e6b17e" />,
+      icon: <BsGit size={iconSize} color="#e6b17e" />,
       position: [-3.5, 3.5, 0],
     },
     {
       id: "10",
-      icon: <FaGithubSquare size="100%" color="#e6b17e" />,
+      icon: <FaGithubSquare size={iconSize} color="#e6b17e" />,
       position: [7, 3.5, 0],
     },
-  ];
+  ], [windowSize])
 
   const adjustedSpheres = spheres.map((sphere, index) => {
     const adjustedPosition = [...sphere.position];
     let adjustedSize;
+    // Calculamos el espacio entre las esferas en función del tamaño de la ventana.
+    const spacing =
+      windowSize <= 1000 ? setWindowSize / (spheres.length / 2) : 3;
     if (windowSize <= 1000) {
       adjustedSize = 0.1;
-      const spacing = windowSize / spheres.length;
-      adjustedPosition[0] = (index % 2) * spacing - windowSize / 2 + spacing / 2; // Ajusta posición en X
-      adjustedPosition[1] = Math.floor(index / 2) * spacing - windowSize / 2 + spacing / 2; // Ajusta posición en Y
+      // Calculamos la posición en el eje X e Y en función del índice de la esfera.
+      adjustedPosition[0] =
+        (index % 2) * spacing - windowSize / 2 + spacing / 2;
+      adjustedPosition[1] =
+        Math.floor(index / 2) * spacing - windowSize / 2 + spacing / 2;
     } else {
       adjustedSize = 1.5;
-      adjustedPosition[0] = (index % 5) * 3 - 6; // Ajusta posición en X
-      adjustedPosition[1] = -Math.floor(index / 5) * 3 + 3; // Ajusta posición en Y
+      // Si la ventana es más grande, las esferas se colocan en una cuadrícula de 2x5.
+      adjustedPosition[0] = (index % 5) * 3.2 - 6.5;
+      adjustedPosition[1] = Math.floor(index / 5) * 4 - 2;
     }
     return { ...sphere, position: adjustedPosition, size: adjustedSize };
   });
 
-/*   const adjustedSpheres = spheres.map((sphere, index) => {
-    const adjustedPosition = [...sphere.position];
-    let adjustedSize;
-    if (windowSize <= 1000) {
-      adjustedSize = windowSize <= 1000 ? 0.1 : 1.5;
-      const spacing  = windowSize / spheres.length;
-      adjustedPosition[1] = index * spacing  - windowSize / 2 + spacing  / 2;
-    } else {
-      adjustedSize = 1.5;
-    }
-    return { ...sphere, position: adjustedPosition, size: adjustedSize };
-  }); */
-  
   return (
     <div className={styles.skills}>
       <Canvas
         orthographic
-        camera={{ zoom: 50, position: cameraPosition }}
+        camera={{ zoom: 50, position: [0, 0, 200] }}
         className={styles.canvas}
-        style={{ width: '100%', height: '100%' }}
+        style={{ width: "100%", height: "100%" }}
       >
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} />
@@ -146,10 +131,10 @@ const Skills3d = () => {
           enablePan={false}
         />
 
-        {adjustedSpheres.map((sphere, index) => (
-          <Sphere key={index} position={sphere.position} size={sphere.size}>
+        {adjustedSpheres.map((sphere) => (
+          <Spheres key={sphere.id} position={sphere.position} size={sphere.size}>
             {sphere.icon}
-          </Sphere>
+          </Spheres>
         ))}
       </Canvas>
     </div>
