@@ -1,30 +1,51 @@
 import styles from "../styles/NavBar.module.css";
 import { Link } from "react-scroll";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { GiHamburgerMenu, GiCrossedBones } from "react-icons/gi";
 import image from "../assets/mi logo3.png";
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const menuRef = useRef();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setShowMenu(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const handleMenu = () => {
     setShowMenu(!showMenu);
   };
 
   return (
-    <nav className={styles.navbar}>
+    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.logo}>
-        <Link to="/" >
+        <Link to="/">
           <img src={image} alt="Logo" />
         </Link>
       </div>
-      <div className={`${styles.links} ${showMenu ? styles.show : ""}`}>
-        <Link
-          to="about"
-          smooth={true}
-          duration={1500}
-          className={styles.link}
-        >
+      <div ref={menuRef} className={`${styles.links} ${showMenu ? styles.show : ""}`}>
+        <Link to="about" smooth={true} duration={1500} className={styles.link}>
           About
         </Link>
         <Link
@@ -35,12 +56,7 @@ const NavBar = () => {
         >
           Projects
         </Link>
-        <Link
-          to="/"
-          smooth={true}
-          duration={1500}
-          className={styles.link}
-        >
+        <Link to="/" smooth={true} duration={1500} className={styles.link}>
           Home
         </Link>
         <Link

@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #070707;
+  background-color: rgb(11, 12, 12);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,6 +7,9 @@
   position: sticky;
   top: 0;
   z-index: 9999;
+}
+.navbar.scrolled {
+  border-bottom: 1px solid white;
 }
 .logo img {
   display: flex;

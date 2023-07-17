@@ -17,7 +17,6 @@ import styles from "../styles/Skills3d.module.css";
 import Spheres from "../components/Spheres";
 
 const Skills3d = () => {
-
   const [windowSize, setWindowSize] = useState(window.innerWidth);
   const cameraRef = useRef();
 
