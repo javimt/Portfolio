@@ -1,5 +1,5 @@
 .navbar {
-  background-color: rgb(11, 12, 12);
+  background: linear-gradient(to top, #000000,  rgb(22, 24, 24));
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,13 +18,14 @@
   height: 100px;
   margin-left: 50px;
   padding: 5px;
+  cursor: pointer;
 }
 .links {
   display: flex;
   align-items: center;
 }
 .links :hover {
-  color: #c56e33;
+  color: rgb(42, 94, 94);
   cursor: pointer;
 }
 .links a {
@@ -40,7 +41,7 @@
 .menuIcon {
   display: none;
   cursor: pointer;
-  color: #e6b17e;
+  color: rgb(42, 94, 94);
 }
 .show {
   display: flex;
@@ -58,6 +59,7 @@
   }
   .links a {
     margin-bottom: 30px;
+    color: rgb(42, 94, 94);
   }
   .logo img {
     margin-left: 30px;
@@ -71,7 +73,7 @@
   }
   .navbar {
     position: sticky;
-    top: 0;
+    top: 55px;
     z-index: 9999;
   }
   .show {

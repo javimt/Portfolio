@@ -1,10 +1,8 @@
 import styles from "../styles/CardProjects.module.css";
 
 const CardProjects = ({ image, name, description, technologies, link }) => {
-
   return (
     <div className={styles.card}>
-      <img src={image} alt={name} className={styles.image} />
       <div className={styles.content}>
         <h3 className={styles.title}>{name}</h3>
         <p className={styles.description}>{description}</p>
@@ -13,8 +11,9 @@ const CardProjects = ({ image, name, description, technologies, link }) => {
           Show
         </a>
       </div>
+      <img src={image} alt={name} className={styles.image} height="100%"/>
     </div>
-  )
-}
+  );
+};
 
 export default CardProjects;

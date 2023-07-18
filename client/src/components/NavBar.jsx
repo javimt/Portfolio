@@ -3,6 +3,7 @@ import { Link } from "react-scroll";
 import { useState, useEffect, useRef } from "react";
 import { GiHamburgerMenu, GiCrossedBones } from "react-icons/gi";
 import image from "../assets/mi logo3.png";
+import Contacts from "./Contacts";
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -40,7 +41,7 @@ const NavBar = () => {
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.logo}>
-        <Link to="/">
+        <Link to="navbar">
           <img src={image} alt="Logo" />
         </Link>
       </div>
@@ -70,9 +71,9 @@ const NavBar = () => {
       </div>
       <div className={styles.menuIcon} onClick={handleMenu}>
         {showMenu ? (
-          <GiCrossedBones color="#E6B17E" />
+          <GiCrossedBones color="rgb(42, 94, 94)" />
         ) : (
-          <GiHamburgerMenu color="#E6B17E" />
+          <GiHamburgerMenu color="rgb(42, 94, 94)" />
         )}
       </div>
     </nav>

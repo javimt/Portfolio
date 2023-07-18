@@ -1,0 +1,51 @@
+.container {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+}
+.icon {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #C56E33;
+  z-index: 1000;
+  transition: transform 0.9s ease;
+  
+}
+.icon:hover {
+  color: rgb(42, 94, 94);
+  cursor: pointer;
+  animation: rotate 0.5s alternate infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(-25deg);
+  }
+  100% {
+    transform: rotate(25deg);
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    background: linear-gradient(to bottom, #000000,rgb(22, 24, 24),rgb(22, 24, 24));
+    top: auto;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    right: 0;
+    gap: 40px;
+  }
+  .icon {
+    top: 10px;
+    position: sticky;
+    color: rgb(42, 94, 94);
+    font-size: 30px;
+  }
+}
