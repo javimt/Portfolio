@@ -47,5 +47,9 @@
     position: sticky;
     color: rgb(42, 94, 94);
     font-size: 30px;
+
+    & :hover {
+      color: #e6b17e;
+    }
   }
 }

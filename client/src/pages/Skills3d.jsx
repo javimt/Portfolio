@@ -17,7 +17,7 @@ import styles from "../styles/Skills3d.module.css";
 import Spheres from "../components/Spheres";
 
 const Skills3d = () => {
-  const [windowSize, setWindowSize] = useState(window.innerWidth);
+  const [windowSize, setWindowSize] = useState({width: window.innerWidth, height: window.innerHeight});
   const cameraRef = useRef();
 
   useEffect(() => {
@@ -37,57 +37,57 @@ const Skills3d = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const iconSize = windowSize * 0.1;
+  const iconSize = windowSize.width * 0.1;
 
   const spheres = useMemo(() => [
     {
       id: "1",
-      icon: <FaNodeJs size={iconSize} color="#e6b17e" />,
+      icon: <FaNodeJs size={iconSize} color="rgb(42, 94, 94)" />,
       position: [0, 0, 0],
     },
     {
       id: "2",
-      icon: <BiLogoPostgresql size={iconSize} color="#e6b17e" />,
+      icon: <BiLogoPostgresql size={iconSize} color="rgb(42, 94, 94)" />,
       position: [7, 0, 0],
     },
     {
       id: "3",
-      icon: <TbBrandJavascript size={iconSize} color="#e6b17e" />,
+      icon: <TbBrandJavascript size={iconSize} color="rgb(42, 94, 94)" />,
       position: [-7, 0, 0],
     },
     {
       id: "4",
-      icon: <FaReact size={iconSize} color="#e6b17e" />,
+      icon: <FaReact size={iconSize} color="rgb(42, 94, 94)" />,
       position: [3.5, 0, 0],
     },
     {
       id: "5",
-      icon: <FaCss3Alt size={iconSize} color="#e6b17e" />,
+      icon: <FaCss3Alt size={iconSize} color="rgb(42, 94, 94)" />,
       position: [-3.5, 0, 0],
     },
     {
       id: "6",
-      icon: <FaDatabase size={iconSize} color="#e6b17e" />,
+      icon: <FaDatabase size={iconSize} color="rgb(42, 94, 94)" />,
       position: [-7, 3.5, 0],
     },
     {
       id: "7",
-      icon: <FaHtml5 size={iconSize} color="#e6b17e" />,
+      icon: <FaHtml5 size={iconSize} color="rgb(42, 94, 94)" />,
       position: [3.5, 3.5, 0],
     },
     {
       id: "8",
-      icon: <SiRedux size={iconSize} color="#e6b17e" />,
+      icon: <SiRedux size={iconSize} color="rgb(42, 94, 94)" />,
       position: [0, 3.5, 0],
     },
     {
       id: "9",
-      icon: <BsGit size={iconSize} color="#e6b17e" />,
+      icon: <BsGit size={iconSize} color="rgb(42, 94, 94)" />,
       position: [-3.5, 3.5, 0],
     },
     {
       id: "10",
-      icon: <FaGithubSquare size={iconSize} color="#e6b17e" />,
+      icon: <FaGithubSquare size={iconSize} color="rgb(42, 94, 94)" />,
       position: [7, 3.5, 0],
     },
   ], [windowSize])
@@ -99,7 +99,8 @@ const Skills3d = () => {
     const spacing =
       windowSize <= 1000 ? setWindowSize / (spheres.length / 2) : 3;
     if (windowSize <= 1000) {
-      adjustedSize = 0.1;
+console.log("putas esferas")
+      adjustedSize = windowSize / 100;
       // Calculamos la posición en el eje X e Y en función del índice de la esfera.
       adjustedPosition[0] =
         (index % 2) * spacing - windowSize / 2 + spacing / 2;

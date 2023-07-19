@@ -6,14 +6,14 @@ import styles from "../styles/Projects.module.css";
 const Projects = () => {
   const projects = [
     {
-      name: "venta de autos nuevos y usados",
+      name: "CarMania",
       description:
-        "Participé tanto en el back como en el front end de esta app: JavaScript, Mondo Db, Express, React, Redux, Css, Tailwind",
+        "Carmania es una app desarrollada con las siguientes tecnologias: JavaScript, Mondo Db, Express, React, Redux, Css, Tailwind",
       image: image2,
       link: "https://carmania-henry.netlify.app/home",
     },
     {
-      name: "api de Dogs",
+      name: "Dogs App",
       description:
         "Hice este proyecto con las siguientes tecnologias: Js, Node, Express, PostgreSQL, Sequelize, React, Redux, Css",
       image: image1,
