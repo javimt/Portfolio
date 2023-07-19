@@ -96,9 +96,10 @@ const Skills3d = () => {
     const adjustedPosition = [...sphere.position];
     let adjustedSize;
     // Calculamos el espacio entre las esferas en función del tamaño de la ventana.
-    const spacing =
-      windowSize <= 1000 ? setWindowSize / (spheres.length / 2) : 3;
-    if (windowSize <= 1000) {
+    const spacing = 3
+      //windowSize <= 1000 ? setWindowSize / (spheres.length / 2) : 3;
+    
+      if (windowSize <= 1000) {
 console.log("putas esferas")
       adjustedSize = windowSize / 100;
       // Calculamos la posición en el eje X e Y en función del índice de la esfera.
