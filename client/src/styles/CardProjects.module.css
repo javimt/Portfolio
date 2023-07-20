@@ -67,8 +67,10 @@
     margin: 2rem auto;
   }
   .image {
-    width: 100%;
+    width: 90%;
     height: 50%;
+    margin: 15px;
+    border-radius: 10px;
   }
   .content {
     width: 100%;

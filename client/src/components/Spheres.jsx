@@ -14,7 +14,7 @@ const Spheres = ({ position, size, children }) => {
 
   return (
     <mesh ref={meshRef} position={adjustedPosition}>
-      <sphereGeometry args={[adjustedSize, 20, 20]} />
+      <sphereGeometry args={[adjustedSize, 12, 12]} />
       <meshBasicMaterial color="#C56E33" wireframe />
       <Html
         center

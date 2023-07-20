@@ -47,7 +47,7 @@ const NavBar = () => {
       </div>
       <div ref={menuRef} className={`${styles.links} ${showMenu ? styles.show : ""}`}>
         <Link to="about" smooth={true} duration={1500} className={styles.link}>
-          About
+          About me
         </Link>
         <Link
           to="projects"
@@ -64,16 +64,16 @@ const NavBar = () => {
           to="skills3d"
           smooth={true}
           duration={1500}
-          className={styles.link}
+          className={styles.link} 
         >
           Skills
         </Link>
       </div>
       <div className={styles.menuIcon} onClick={handleMenu}>
         {showMenu ? (
-          <GiCrossedBones color="rgb(42, 94, 94)" />
+          <GiCrossedBones className={styles.iconshow} color="#c56d33" />
         ) : (
-          <GiHamburgerMenu color="rgb(42, 94, 94)" />
+          <GiHamburgerMenu className={styles.iconshow} color="#c56d33" />
         )}
       </div>
     </nav>
