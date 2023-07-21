@@ -6,11 +6,14 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   transition: box-shadow 0.5s;
   will-change: transform;
   background-color: #e6b17e;
   color: #C56E33;
-  margin: 2rem;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 80px;
   margin-bottom: 4rem;
 }
 .card:hover {
@@ -21,6 +24,7 @@
   border-radius: 10px;
   width: 50%;
   height: auto;
+  margin: 5px;
 }
 .content {
   padding: 20px;

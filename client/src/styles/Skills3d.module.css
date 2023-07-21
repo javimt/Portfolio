@@ -19,6 +19,7 @@
   align-items: center;
 }
 .mesh {
-  width: 10%;
-  height: 10%;
+  width: 10vw;
+  height: 10vh;
 }
+
