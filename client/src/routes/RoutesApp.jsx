@@ -12,14 +12,14 @@ const Routes = () => {
       <div id="/">
         <Home />
       </div>
+      <div id="about">
+        <About />
+      </div>
       <div id="skills3d">
         <Skills3d />
       </div>
       <div id="projects">
         <Projects />
-      </div>
-      <div id="about">
-        <About />
       </div>
       <Footer />
     </>

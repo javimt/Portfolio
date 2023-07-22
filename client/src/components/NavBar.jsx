@@ -41,29 +41,29 @@ const NavBar = () => {
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.logo}>
-        <Link to="navbar">
+        <Link to="navbar" smooth={true} duration={1900}>
           <img src={image} alt="Logo" />
         </Link>
       </div>
       <div ref={menuRef} className={`${styles.links} ${showMenu ? styles.show : ""}`}>
-        <Link to="about" smooth={true} duration={1500} className={styles.link}>
+        <Link to="about" smooth={true} duration={1900} className={styles.link}>
           About me
         </Link>
         <Link
           to="projects"
           smooth={true}
-          duration={1500}
+          duration={1900}
           className={styles.link}
         >
           Projects
         </Link>
-        <Link to="/" smooth={true} duration={1500} className={styles.link}>
+        <Link to="/" smooth={true} duration={1800} className={styles.link}>
           Home
         </Link>
         <Link
           to="skills3d"
           smooth={true}
-          duration={1500}
+          duration={1900}
           className={styles.link} 
         >
           Skills

@@ -13,6 +13,7 @@ import { TbBrandJavascript } from "react-icons/tb";
 import { SiRedux } from "react-icons/si";
 import { BsGit } from "react-icons/bs";
 import { BiLogoPostgresql } from "react-icons/bi";
+import { AiOutlineLine } from "react-icons/ai";
 import styles from "../styles/Skills3d.module.css";
 import Spheres from "../components/Spheres";
 
@@ -99,7 +100,7 @@ const Skills3d = () => {
     } else {
       adjustedSize = 1.5;
       adjustedPosition[0] = (index % 5) * 3.3 - 6.8;
-      adjustedPosition[1] = Math.floor(index / 5) * 3.8 - 2.8;
+      adjustedPosition[1] = Math.floor(index / 5) * 3.5 - 1.5;
     }
 
     return { ...sphere, position: adjustedPosition, size: adjustedSize };
@@ -107,6 +108,8 @@ const Skills3d = () => {
 
   return (
     <div className={styles.skills}>
+      <h1 className={styles.title}>Skills</h1>
+      <p className={styles.line}><AiOutlineLine size="100px"/></p>
       <Canvas
         orthographic
         camera={{ zoom: 50, position: [0, 0, 200] }}
