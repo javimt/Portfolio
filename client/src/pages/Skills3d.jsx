@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import {
@@ -21,28 +21,18 @@ const Skills3d = () => {
     width: window.innerWidth,
     height: window.innerHeight,
   });
-  //const cameraRef = useRef();
-
+  
   useEffect(() => {
     const handleResize = () => {
-      /* if (cameraRef.current) {
-      const aspect = window.innerWidth / window.innerHeight;
-      const zoom = window.innerWidth < 1000 ? 100 : 50;
-      cameraRef.current.aspect = aspect;
-      cameraRef.current.zoom = zoom;
-      cameraRef.current.updateProjectionMatrix(); */
       setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-      //}
     };
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [windowSize]);
 
   //const iconSize = windowSize.width * 0.1;
 
-  const spheres = useMemo(
-    () => [
+  const spheres =  [
       {
         id: "1",
         icon: <FaNodeJs color="rgb(42, 94, 94)" />,
@@ -93,28 +83,23 @@ const Skills3d = () => {
         icon: <FaGithubSquare  color="rgb(42, 94, 94)" />,
         position: [7, 3.5, 0],
       },
-    ],
-    [windowSize]
-  );
+  ]
 
   const adjustedSpheres = spheres.map((sphere, index) => {
     const adjustedPosition = [...sphere.position];
-    const minWindowSize = Math.min(windowSize.width, windowSize.height);
+    const minWindowSize = Math.min(windowSize.width, windowSize.height) / 1000;
     let adjustedSize;
 
-    // Calculamos el espacio entre las esferas en función del tamaño de la ventana.
-    if (windowSize.width <= 1000 & windowSize.height > 200) {
-      console.log("putas esferas");
+    if (windowSize.width <= 1000) {
       adjustedSize = windowSize.height / 500;
-
-      // Calculamos la posición en el eje X e Y en función del índice de la esfera.
-      adjustedPosition[0] = (index % 2 === 0 ? -5.5 : 5.5) * (minWindowSize / 1000); //index % 2 === 0 ? - 5 : 5; // Esto divide las esferas en dos columnas
-      adjustedPosition[1] = (Math.floor(index / 2) * 7.9 - 18) * (minWindowSize / 1000); //Math.floor(index / 2) * 6 - 15;
+      adjustedPosition[0] = 
+        (index % 2 === 0 ? - 5 : 5) * (minWindowSize);  // Esto divide las esferas en dos columnas
+      adjustedPosition[1] = 
+        (Math.floor(index / 2) * 9 - 17) * (minWindowSize) -2 + 1.5;
     } else {
       adjustedSize = 1.5;
-      // Si la ventana es más grande, las esferas se colocan en una cuadrícula de 2x5.
-      adjustedPosition[0] = (index % 5) * 3.3 - 7.08;
-      adjustedPosition[1] = Math.floor(index / 5) * 4 - 2.8;
+      adjustedPosition[0] = (index % 5) * 3.3 - 6.8;
+      adjustedPosition[1] = Math.floor(index / 5) * 3.8 - 2.8;
     }
 
     return { ...sphere, position: adjustedPosition, size: adjustedSize };
@@ -126,7 +111,7 @@ const Skills3d = () => {
         orthographic
         camera={{ zoom: 50, position: [0, 0, 200] }}
         className={styles.canvas}
-        style={{ width: "100%", height: "100%" }}
+        //style={{ width: "100%", height: "100%" }}
       >
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} />
@@ -137,7 +122,7 @@ const Skills3d = () => {
         />
 
         {adjustedSpheres.map((sphere) => (
-          <Spheres
+          <Spheres className={styles.sphere}
             key={sphere.id}
             position={sphere.position}
             size={sphere.size}
