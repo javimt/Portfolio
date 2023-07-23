@@ -114,13 +114,13 @@ const Skills3d = () => {
         orthographic
         camera={{ zoom: 50, position: [0, 0, 200] }}
         className={styles.canvas}
-        //style={{ width: "100%", height: "100%" }}
+        style={{ width: "100%", height: "100%" }}
       >
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} />
         <OrbitControls
           enableZoom={false}
-          enableRotate={false}
+          enableRotate={true}
           enablePan={false}
         />
 
