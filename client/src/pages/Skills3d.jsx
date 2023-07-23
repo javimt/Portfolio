@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, Stars } from "@react-three/drei";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -127,8 +127,10 @@ const Skills3d = () => {
           enableZoom={interactionEnabled}
           enableRotate={interactionEnabled}
           enablePan={interactionEnabled}
+          autoRotateSpeed={0.4}
+          autoRotate={interactionEnabled}
         />
-
+        <Stars count={500000} factor={8}/>
         {adjustedSpheres.map((sphere) => (
           <Spheres
             className={styles.sphere}
@@ -138,6 +140,7 @@ const Skills3d = () => {
           >
             {sphere.icon}
           </Spheres>
+
         ))}
       </Canvas>
     </div>
