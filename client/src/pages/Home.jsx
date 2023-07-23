@@ -40,8 +40,8 @@ const Home = () => {
         className={`${styles.welcome} ${styles.animatedText} ${
           isVisible ? styles.animate : "" } ${!textVisible ? styles.hidden : ""}`}
       >
-        ¡Hi! ¡welcome to my space <PiHandHeartDuotone color="rgb(42, 94, 94)" />
-        !
+        ¡Hi! welcome to my space <PiHandHeartDuotone color="rgb(42, 94, 94)" />
+        
       </p>
       <p className={`${styles.name} ${styles.animatedText} ${
           isVisible ? styles.animate : ""

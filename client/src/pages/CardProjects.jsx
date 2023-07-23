@@ -1,5 +1,5 @@
 import styles from "../styles/CardProjects.module.css";
-import {FaLink} from "react-icons/fa";
+import { FaLink } from "react-icons/fa";
 
 const CardProjects = ({ image, name, description, technologies, link }) => {
   return (
@@ -8,11 +8,13 @@ const CardProjects = ({ image, name, description, technologies, link }) => {
         <h3 className={styles.title}>{name}</h3>
         <p className={styles.description}>{description}</p>
         <p className={styles.tecnologies}>{technologies}</p>
-        <a href={link} className={styles.link}>
-          <FaLink className={styles.logo} color="rgb(42, 94, 94)" /> Show
-        </a>
+        <div className={styles.linkContainer}>
+          <a href={link} className={styles.link}>
+            <FaLink className={styles.logo} color="rgb(42, 94, 94)" /> Show
+          </a>
+        </div>
       </div>
-      <img src={image} alt={name} className={styles.image} height="100%"/>
+      <img src={image} alt={name} className={styles.image} height="100%" />
     </div>
   );
 };

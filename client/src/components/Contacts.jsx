@@ -4,13 +4,13 @@ import styles from "../styles/Contacts.module.css";
 const Contacts = () => {
   return (
     <div className={styles.container}>
-      <a href="https://github.com/tu-usuario">
+      <a href="https://github.com/javimt">
         <FaGithub className={styles.icon} />
       </a>
-      <a href="https://linkedin.com/in/tu-usuario">
+      <a href="https://www.linkedin.com/in/javier-garcia-plata-033349246/">
         <FaLinkedin className={styles.icon} />
       </a>
-      <a href="https://wa.me/tu-número">
+      <a href="https://api.whatsapp.com/send?phone=573114617436&text=hola">
         <FaWhatsapp className={styles.icon} />
       </a>
     </div>

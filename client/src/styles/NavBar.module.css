@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  justify-items: center;
   padding: 2px;
   position: sticky;
   top: 0;
@@ -16,22 +17,23 @@
   align-items: center;
   justify-content: center;
   height: 100px;
-  margin-left: 50px;
   padding: 5px;
+  margin: 5px 50px;
   cursor: pointer;
 }
 .links {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .links :hover {
   color: rgb(42, 94, 94);
   cursor: pointer;
 }
 .links a {
+  /* margin-left: 50px; */
   display: flex;
-  margin-left: 20px;
-  margin-right: 50px;
+  margin-right: 70px;
   text-decoration: none;
   color: #e6b17e;
   font-family: Georgia, serif;
@@ -51,6 +53,11 @@
   right: 0;
   padding: 10px;
   border-top: none;
+}
+.active {
+  color: rgb(42, 94, 94);
+  border: 1.5px solid rgb(42, 94, 94);
+  border-radius: 10px;
 }
 
 @media (max-width: 1000px) and (min-width: 250px) {
@@ -96,5 +103,9 @@
     padding-top: 30px;
     border-top: none;
     z-index: 1000;
+  }
+  .active {
+    border: 4.5px solid rgb(42, 94, 94);
+    border-radius: 10px;
   }
 }

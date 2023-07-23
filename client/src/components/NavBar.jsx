@@ -3,7 +3,6 @@ import { Link } from "react-scroll";
 import { useState, useEffect, useRef } from "react";
 import { GiHamburgerMenu, GiCrossedBones } from "react-icons/gi";
 import image from "../assets/mi logo3.png";
-import Contacts from "./Contacts";
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -41,32 +40,54 @@ const NavBar = () => {
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.logo}>
-        <Link to="navbar" smooth={true} duration={1900}>
+        <Link to="navbar" smooth={true} duration={2000}>
           <img src={image} alt="Logo" />
         </Link>
       </div>
-      <div ref={menuRef} className={`${styles.links} ${showMenu ? styles.show : ""}`}>
-        <Link to="about" smooth={true} duration={1900} className={styles.link}>
-          About me
+
+      <div
+        ref={menuRef}
+        className={`${styles.links} ${showMenu ? styles.show : ""}`}
+      >
+        <Link
+          to="/"
+          smooth={true}
+          duration={2700}
+          className={styles.link}
+          activeClass={styles.active}
+          spy={true}
+        >
+          Home
         </Link>
         <Link
-          to="projects"
+          to="about"
           smooth={true}
-          duration={1900}
+          duration={2000}
           className={styles.link}
+          activeClass={styles.active}
+          spy={true}
         >
-          Projects
-        </Link>
-        <Link to="/" smooth={true} duration={1800} className={styles.link}>
-          Home
+          About me
         </Link>
         <Link
           to="skills3d"
           smooth={true}
-          duration={1900}
-          className={styles.link} 
+          duration={2000}
+          className={styles.link}
+          activeClass={styles.active}
+          spy={true}
         >
           Skills
+        </Link>
+        <Link
+          to="projects"
+          smooth={true}
+          duration={2000}
+          className={styles.link}
+          activeClass={styles.active}
+          spy={true}
+        >
+          Projects
         </Link>
       </div>
       <div className={styles.menuIcon} onClick={handleMenu}>
