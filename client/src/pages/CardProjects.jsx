@@ -10,8 +10,7 @@ const CardProjects = ({ image, name, description, technologies, link }) => {
         <p className={styles.tecnologies}>{technologies}</p>
         <div className={styles.linkContainer}>
           <a href={link} className={styles.link}>
-            <FaLink className={styles.logo} color="rgb(42, 94, 94)" /> Show
-          </a>
+            <FaLink className={styles.logo} /> Show</a>
         </div>
       </div>
       <img src={image} alt={name} className={styles.image} height="100%" />

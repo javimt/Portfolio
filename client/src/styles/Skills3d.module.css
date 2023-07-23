@@ -15,16 +15,30 @@
   height: 100%;
   z-index: 1;
 }
-.skill {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .skills p {
   color: rgb(42, 94, 94);
 }
 .title {
   color: #e6b17e
+}
+button {
+  font-family: Georgia, serif;
+  background-color: #C56E33;
+  color: #e6b17e;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 8px;
+  align-content: center;
+  text-decoration: none;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 1.5px solid rgb(42, 94, 94);
+}
+button:hover {
+  background: rgb(42, 94, 94);
+  border: 1.5px solid #e6b17e;
+  color: #C56E33;
 }
 
 /* @media (max-width: 1000px) and (min-width: 450px){

@@ -65,10 +65,19 @@
   text-decoration: none;
   font-size: 1em;
   cursor: pointer;
+  /* transition: background-color 0.3s ease; */
+  border: 1.5px solid rgb(42, 94, 94);
+}
+.link .logo {
+  color: rgb(42, 94, 94);
   transition: background-color 0.3s ease;
 }
 .link:hover {
-  background-color: rgb(6, 8, 8);
+  background: rgb(42, 94, 94);
+  border: 1.5px solid #e6b17e;
+  color: #C56E33;
+}
+.link:hover .logo {
   color: #C56E33;
 }
 .linkContainer {
