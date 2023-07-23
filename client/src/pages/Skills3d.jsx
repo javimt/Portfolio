@@ -119,7 +119,7 @@ const Skills3d = () => {
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} />
         <OrbitControls
-          enableZoom={false}
+          enableZoom={true}
           enableRotate={true}
           enablePan={false}
         />
