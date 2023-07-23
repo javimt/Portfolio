@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
 import {
@@ -131,6 +131,7 @@ const Skills3d = () => {
           autoRotate={interactionEnabled}
         />
         <Stars count={500000} factor={8}/>
+        
         {adjustedSpheres.map((sphere) => (
           <Spheres
             className={styles.sphere}
