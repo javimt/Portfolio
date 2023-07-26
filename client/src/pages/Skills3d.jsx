@@ -23,16 +23,14 @@ const Skills3d = () => {
     height: window.innerHeight,
   });
   const [interactionEnabled, setInteractionEnabled] = useState(false);
-
+  
   useEffect(() => {
     const handleResize = () => {
-      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+      setWindowSize(windowSize);
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [windowSize]);
-
-  //const iconSize = windowSize.width * 0.1;
+  }, []);
 
   const spheres = [
     {
