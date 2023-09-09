@@ -125,7 +125,7 @@ const Skills3d = () => {
           enableZoom={interactionEnabled}
           enableRotate={interactionEnabled}
           enablePan={interactionEnabled}
-          autoRotateSpeed={0.4}
+          autoRotateSpeed={2}
           autoRotate={interactionEnabled}
         />
         
