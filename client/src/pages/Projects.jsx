@@ -10,7 +10,7 @@ const Projects = () => {
       name: "CarMania",
       description: "Carmania es una app muy dinamica para vender autos nuevos y usados, donde los usuarios pueden buscar autos por marca, modelo, precios y tipos de carroceria. Ésta app cuenta con un dashboard para usuario donde solo será visible al momento que el usuario se registre; y uno para el administrador. Ademas cuenta con una pasarela de pago. Tecnologias: JavaScript, Mondo Db, Express, React, Redux, Css, Tailwind",
       image: image2,
-      link: "https://carmania-henry.netlify.app/home",
+      link: "https://carmania-henry.netlify.app/",
     },
     {
       name: "Furnished Apartments Medellin",
