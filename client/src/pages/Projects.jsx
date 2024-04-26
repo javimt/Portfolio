@@ -1,5 +1,5 @@
 import CardProjects from "./CardProjects";
-import image1 from "../assets/rent apartments.jpeg";
+import image1 from "../assets/apartment v2.jpeg";
 import image2 from "../assets/imagepf.png";
 import styles from "../styles/Projects.module.css";
 import { AiOutlineLine } from "react-icons/ai";
