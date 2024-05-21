@@ -1,5 +1,5 @@
 import CardProjects from "./CardProjects";
-import image1 from "../assets/apartment v2.jpeg";
+import image1 from "../assets/img 1.jpeg";
 import image2 from "../assets/imagepf.png";
 import styles from "../styles/Projects.module.css";
 import { AiOutlineLine } from "react-icons/ai";
@@ -18,7 +18,7 @@ const Projects = () => {
       description:
         "Furnished Apartments Medellin es una app muy intuitiva y facil de usar, donde los usuarios pueden dar click a cualquiera de las imagenes del carrousel del home y seran redirigidos al detalle del apartamento en el cual podran ver las comodidades del mismo, ademas de poder generar la renta directamente desde allí, o, pueden dirigirse a la seccion For rent para ver un listado de apartamentos los cuales van a estar 'Available' o 'Not available' en caso de que ya se haya generado una renta. Tambien cuenta con un dashboard de admin donde solo pueden ingresar el admin el cual puede solo crear apartamentos y ver el listado de usuarios registrados; y el superAdmin quien aparte de poder crear apartamentos, podrá cambiar los roles de los usuarios. Tecnologias: Js, Node, PostgreSQL, Sequelize, React, Redux y Tailwind",
       image: image1,
-      link: "https://rent-apartments-medellin.up.railway.app/",
+      link: "https://www.medellinfurnishedapartment.com",
     },
   ];
 
