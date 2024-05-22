@@ -91,7 +91,7 @@ const Skills3d = () => {
     let adjustedSize;
 
     if (windowSize.width <= 1000) {
-      adjustedSize = windowSize.height / 500;
+      adjustedSize = windowSize.height / 460;
       adjustedPosition[0] = (index % 2 === 0 ? -5 : 5) * minWindowSize; // Esto divide las esferas en dos columnas
       adjustedPosition[1] =
         (Math.floor(index / 2) * 9 - 17) * minWindowSize - 2 + 1.5;

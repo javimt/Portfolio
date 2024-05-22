@@ -44,17 +44,6 @@
   margin-bottom: 20px;
   color: #c56e33;
   display: inline-block;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 5; /* Limita a 5 líneas */
-  -webkit-box-orient: vertical;
-  cursor: pointer; 
-}
-.expanded {
-  -webkit-line-clamp: unset; /* Muestra todas las líneas */
-}
-.collapsed {
-  -webkit-line-clamp: 5; /* Limita a 5 líneas */
 }
 .tecnologies {
   margin-bottom: 30px;
@@ -101,7 +90,7 @@
   .card {
     flex-direction: column-reverse;
     margin: 2rem auto;
-    height: 700px;
+    height: auto;
     overflow-x: hidden;
   }
   .image {

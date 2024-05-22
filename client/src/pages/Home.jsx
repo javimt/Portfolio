@@ -55,9 +55,9 @@ const Home = () => {
         <TbDeviceDesktopHeart color="rgb(42, 94, 94)" />
       </h1>
 
-      <div className={styles.cv}>
+      {/* <div className={styles.cv}>
         <a href=""></a>
-      </div>
+      </div> */}
     </div>
   );
 };
