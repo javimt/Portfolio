@@ -7,7 +7,7 @@ const Contacts = () => {
       <a href="https://github.com/javimt">
         <FaGithub className={styles.icon} />
       </a>
-      <a href="https://www.linkedin.com/in/javier-garcia-plata-033349246/">
+      <a href="https://www.linkedin.com/in/javier-g-033349246/">
         <FaLinkedin className={styles.icon} />
       </a>
       <a href="https://api.whatsapp.com/send?phone=573114617436&text=hola">
